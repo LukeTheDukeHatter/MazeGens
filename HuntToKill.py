@@ -51,6 +51,4 @@ def HuntToKill(width:int,height:int,grid:list=False,log:bool=False) -> Maze:
 					else:
 						ValidRoutes.remove(Route)
 
-
-
 	return Maze(grid,width,height)
