@@ -7,8 +7,8 @@
             }
 
             #TheGrid {
-                width: 100vh;
-                height: 100vh;
+                width: min(100vh, 100vw);
+                height: min(100vh, 100vw);
 
                 display: grid;
                 grid-template-columns: repeat(42, 1fr);
@@ -28,6 +28,8 @@
     </head>
     <body>
         <div id="TheGrid"></div>
-        <script src="./Layout.js"></script>
+        <script src="./Classes.js"></script>
+        <script src="./Generators.js"></script>
+        <script src="./Creator.js"></script>
     </body>
 </html>

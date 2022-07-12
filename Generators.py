@@ -6,4 +6,4 @@ from HuntToKill import *
 
 # RecursiveMazeGen(25,25).Draw()
 
-HuntToKill(20,20).Draw()
+HuntToKill(20,20).Draw(log=True)

@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            #TheGrid {
+                width: 100vh;
+                height: 100vh;
+
+                display: grid;
+                grid-template-columns: repeat(42, 1fr);
+                grid-template-rows: repeat(42, 1fr);
+                column-gap: 0;
+                row-gap: 0;
+            }
+
+            .taken {
+                background-color: black;
+            }
+
+            .empty {
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="TheGrid"></div>
+        <!-- <script src="./Layout.js"></script> -->
+        <script src="./NewMaze.js"></script>
+    </body>
+</html>
