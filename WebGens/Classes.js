@@ -21,14 +21,16 @@ class Maze {
 
 		var cmaze = [];
 
+		console.log(this.Data);
+
 		if (Border) { cmaze.push(BChar.repeat(this.Width*2+2)); }
 		for (let y of this.Data) {
-			var l1 = Border ? BChar : '';
-			var l2 = Border ? BChar : '';
+			var l1 = (Border ? BChar : '');
+			var l2 = (Border ? BChar : '');
 			for (let x of y) {
-				l1 += x.Visited ? '#' : ' ';
-				l1 += x.Right ? '#' : ' ';
-				l2 += x.Down ? '#' : ' ';
+				l1 += (x.Visited ? '#' : ' ');
+				l1 += (x.Right ? '#' : ' ');
+				l2 += (x.Down ? '#' : ' ');
 				l2 += ' ';
 			}
 			l1 += Border ? BChar : '';
@@ -38,17 +40,13 @@ class Maze {
 		}
 		if (Border) { cmaze.push(BChar.repeat(this.Width*2+2)); }
 
-		if (log == true) {
-			console.log(cmaze.join('\n'));
-		}
+		if (log == true) { console.log(cmaze.join('\n')); }
 
 		const DaGrid = document.getElementById('TheGrid');
 		
 		DaGrid.innerHTML = '';
 		DaGrid.style.gridTemplateColumns = `repeat(${this.Width}, 1fr) !important`;
 		DaGrid.style.gridTemplateRows = `repeat(${this.Height}, 1fr) !important`;
-
-		console.log(cmaze);
 
 		for (let y of cmaze) {
 			for (let x of y) {

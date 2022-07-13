@@ -9,29 +9,21 @@ function HuntToKill(width, height){
 	}
 
 	for (let y = 0;y<height; y++) {
-		for (let x = 0; x<height; x++) {
-			let cx = x;
-			let cy = y;
+		for (let x = 0; x<width; x++) {
+			var cx = x;
+			var cy = y;
 
 			var Stuck = false;
 			while (!Stuck) {
 
 				grid[cy][cx].Visit();
 
-				ValidRoutes = [];
+				var ValidRoutes = [];
 
-				if (cy > 0 && !grid[cy-1][cx].Down) {
-					ValidRoutes.push('Up');
-				}
-				if (cy < height-1 && !grid[cy][cx].Down) {
-					ValidRoutes.push('Down');
-				}
-				if (cx > 0 && !grid[cy][cx-1].Right) {
-					ValidRoutes.push('Left');
-				}
-				if (cx < width-1 && !grid[cy][cx].Right) {
-					ValidRoutes.push('Right');
-				}
+				if (cy > 0 && !grid[cy-1][cx].Down) { ValidRoutes.push('Up'); }
+				if (cy < height-1 && !grid[cy][cx].Down) { ValidRoutes.push('Down'); }
+				if (cx > 0 && !grid[cy][cx-1].Right) { ValidRoutes.push('Left'); }
+				if (cx < width-1 && !grid[cy][cx].Right) { ValidRoutes.push('Right'); }
 
 				while (true) {
 					if (ValidRoutes.length == 0) {
@@ -39,7 +31,7 @@ function HuntToKill(width, height){
 						break;
 					}
 
-					Route = ValidRoutes[Math.floor(Math.random()*ValidRoutes.length)];
+					var Route = ValidRoutes[Math.floor(Math.random()*ValidRoutes.length)];
 
 					if (Route == 'Up' && !grid[cy-1][cx].Visited) {
 						cy--;
